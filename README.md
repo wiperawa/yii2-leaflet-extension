@@ -47,6 +47,9 @@ Provider. Is very important, if we fail to provide a Tile Provider Url, the map 
 all.
 
 The following example, is making use of [MapQuest](http://developer.mapquest.com/):
+//Wiperawa comment:
+During testing i cant find free map url sources, so i decided to use mapbox (found that in documentation of leaflet, but you need to register and get access token of it)
+But you can use any map images source.
 
 ```
 // first lets setup the center of our map
@@ -57,8 +60,10 @@ $marker = new \dosamigos\leaflet\layers\Marker(['latLng' => $center, 'popupConte
 
 // The Tile Layer (very important)
 $tileLayer = new \dosamigos\leaflet\layers\TileLayer([
-   'urlTemplate' => 'http://otile{s}.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpeg',
+   'urlTemplate' => 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
     'clientOptions' => [
+	'id' => 'mapbox.streets',
+	'accessToken' =>'Your-access-token',
         'attribution' => 'Tiles Courtesy of <a href="http://www.mapquest.com/" target="_blank">MapQuest</a> ' .
         '<img src="http://developer.mapquest.com/content/osm/mq_logo.png">, ' .
         'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
