@@ -22,7 +22,7 @@ To use this fork, your composer.json should look something like this:
 "repositories": [
     {
         "type": "vcs",
-        "url":  "https://github.com/viperawa/yii2-leaflet-extension"
+        "url":  "https://github.com/wiperawa/yii2-leaflet-extension"
     }
 ...
     
