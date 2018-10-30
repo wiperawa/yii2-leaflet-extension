@@ -9,6 +9,23 @@ LeafLet Extension for Yii2
 
 Extension library to display interactive maps with [LeafletJs](http://leafletjs.com/)
 
+This is the fork of original 2amigos/yii2-leaflet-extension
+Mainly i Forked it to add ecdode function for popupTrait, to correctly display rendered by Yii2 popups.
+In original package JS  error happened, when tryinf to set 'popupContent' => $this->render(....), because string have unterminated lines.
+So need to encode it first.
+
+To use this fork, your composer.json should look something like this:
+"require": [
+    ...
+    "2amigos/yii2-leaflet-extension"
+],
+"repositories": [
+    {
+        "type": "vcs",
+        "url":  "https://github.com/viperawa/yii2-leaflet-extension"
+    }
+...
+    
 Installation
 ------------
 

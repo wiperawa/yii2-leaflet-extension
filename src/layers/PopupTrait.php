@@ -25,6 +25,25 @@ trait PopupTrait
     public $openPopup = false;
 
     /**
+     * Encode Content for js string. 
+     * 
+     * Main issue happends is when you use rendered view, js will tell you that unterminated new lines in content,
+     * So need to encode this.
+     *
+     * @param string $content
+     *
+     * @return string
+    */
+
+     private function encodeContent ($content) {
+	
+	$content = preg_replace('/\r\n|\n|\r/', "\\n", $content);
+        $content = preg_replace('/(["\'])/', '\\\\\1', $content);
+        return $content;
+        
+    }
+
+    /**
      * Binds popup content (if any) to the js code to register
      *
      * @param string $js
