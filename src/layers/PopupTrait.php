@@ -53,7 +53,7 @@ trait PopupTrait
     protected function bindPopupContent($js)
     {
         if (!empty($this->popupContent)) {
-            $content = addslashes($this->popupContent);
+            $content = $this->encodeContent($this->popupContent);
             $js .= ".bindPopup(\"{$content}\")";
             if ($this->openPopup) {
                 $js .= ".openPopup()";

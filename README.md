@@ -14,18 +14,6 @@ Mainly i Forked it to add ecdode function for popupTrait, to correctly display r
 In original package JS  error happened, when tryinf to set 'popupContent' => $this->render(....), because string have unterminated lines.
 So need to encode it first.
 
-To use this fork, your composer.json should look something like this:
-"require": [
-    ...
-    "2amigos/yii2-leaflet-extension"
-],
-"repositories": [
-    {
-        "type": "vcs",
-        "url":  "https://github.com/wiperawa/yii2-leaflet-extension"
-    }
-...
-    
 Installation
 ------------
 
@@ -35,18 +23,21 @@ The preferred way to install this extension is through
 which is also a dependency for yii2 – so if you have yii2 installed, you are
 most likely already set.
 
-Either run
-
-```
-composer require 2amigos/yii2-leaflet-extension:~1.0
-```
-or add
-
-```json
-"2amigos/yii2-leaflet-extension" : "~1.0"
+To use this fork, your composer.json should look something like this:
 ```
 
-to the require section of your application's `composer.json` file.
+"require": [
+    ...
+    "2amigos/yii2-leaflet-extension": "master"
+],
+"repositories": [
+    {
+        "type": "vcs",
+        "url":  "https://github.com/wiperawa/yii2-leaflet-extension"
+    }
+...
+    
+```
 
 Usage
 -----
