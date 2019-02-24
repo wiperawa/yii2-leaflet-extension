@@ -74,7 +74,9 @@ class Marker extends Layer
             $js = "var $name = $js;";
         }
         $js .= $this->getEvents() . ($map !== null && empty($name)? ";" : "");
-
+	if (!empty($name) ) {
+	    $js .= "l_markers.$name =  $name;";
+	}
         return new JsExpression($js);
     }
 }
