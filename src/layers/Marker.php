@@ -29,6 +29,9 @@ class Marker extends Layer
 {
     use LatLngTrait;
     use PopupTrait;
+    
+    public $external_target_class = '';
+    public $data_id = '';
 
     /**
      * Sets the marker's icon
@@ -76,6 +79,8 @@ class Marker extends Layer
         $js .= $this->getEvents() . ($map !== null && empty($name)? ";" : "");
 	if (!empty($name) ) {
 	    $js .= "l_markers.$name =  $name;";
+    	    $js .= "$name.external_target_class = '".$this->external_target_class."';";
+    	    $js .= "$name.data_id = '".$this->data_id."'";
 	}
         return new JsExpression($js);
     }
