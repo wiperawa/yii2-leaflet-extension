@@ -119,6 +119,6 @@ class Map extends Widget
             $js[] = "$name.setView({$lateInitClientOptions['center']}, {$lateInitClientOptions['zoom']});";
         }
 
-        $view->registerJs("var l_markers = []; function {$name}_init(){\n" . implode("\n", $js) . " window.map = map;}\n{$name}_init(); window.l_markers = l_markers;");
+        $view->registerJs("var l_markers = []; function {$name}_init(){\n" . implode("\n", $js) . " window.{$id} = map;}\n{$name}_init(); window.l_markers = l_markers;");
     }
 }
